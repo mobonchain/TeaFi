@@ -1,0 +1,21 @@
+{
+    "api_Url": "https://api.tea-fi.com/transaction",
+    "pointsAmount": "https://api.tea-fi.com/points/",
+    "accounts": [
+        {
+            "privateKey": "Your_Wallet_PrivateKey1",
+            "rpc_url": "https://polygon-mainnet.g.alchemy.com/v2/API_KEY11",
+            "proxy": "http://username:pass@host:port"
+      },
+      {
+        "privateKey": "Your_Wallet_PrivateKey2",
+        "rpc_url": "https://polygon-mainnet.g.alchemy.com/v2/API_KEY22",
+        "proxy": "http://username:pass@host:port"
+  },
+  {
+    "privateKey": "Your_Wallet_PrivateKey33",
+    "rpc_url": "https://polygon-mainnet.g.alchemy.com/v2/API_KEY33",
+    "proxy": "http://username:pass@host:port"
+}
+    ]
+  }
