@@ -5,16 +5,14 @@
 
 - [![TopAME | Bullish - Cheerful](https://img.shields.io/badge/TopAME%20|%20Bullish-Cheerful-blue?logo=telegram&style=flat)](https://t.me/xTopAME)
 
-# Hướng dẫn cài đặt Auto Swap TeaFi ( POL → WPOL )
-
-- Mã nguồn gốc được thực hiện bởi @Svz1404
+# Hướng dẫn cài đặt Auto Swap TeaFi ( WPOL → tPOL )
 
 ---
 
 ## Yêu cầu
 
 1. Kết nối ví và tham gia **[TeaFi](http://app.tea-fi.com/?ref=btfi6z)**
-2. Chuẩn bị 2 - 5 POL trong ví
+2. **Swap** **POL → WPOL**, sau đó **Swap** **WPOL → tPOL** tối thiểu 1 lệnh và **Aprove** cho **WPOL** 
 3. URL RPC mạng **Polygon**. Có thể đăng ký miễn phí URL RPC tại **[Alchemy](https://alchemy.com/)**.
 
 ### Hướng dẫn lấy URL RPC từ Alchemy
@@ -30,11 +28,29 @@
 
 ---
 
-## Cấu Trúc Dữ Liệu Trong File .env
+## Cấu Trúc Dữ Liệu Trong File config,json
 ```
-PRIVATE_KEY=YOUR_PRIVATE_KEY
-RPC_URL=URL_RPC_POLYGON
-API_URL=https://api.tea-fi.com/transaction
+{
+    "api_Url": "https://api.tea-fi.com/transaction",
+    "pointsAmount": "https://api.tea-fi.com/points/",
+    "accounts": [
+        {
+            "privateKey": "Your_Wallet_PrivateKey1",
+            "rpc_url": "https://polygon-mainnet.g.alchemy.com/v2/API_KEY11",
+            "proxy": "http://username:pass@host:port"
+      },
+      {
+        "privateKey": "Your_Wallet_PrivateKey2",
+        "rpc_url": "https://polygon-mainnet.g.alchemy.com/v2/API_KEY22",
+        "proxy": "http://username:pass@host:port"
+  },
+  {
+    "privateKey": "Your_Wallet_PrivateKey33",
+    "rpc_url": "https://polygon-mainnet.g.alchemy.com/v2/API_KEY33",
+    "proxy": "http://username:pass@host:port"
+}
+    ]
+  }
 ```
 
 ---
@@ -48,8 +64,8 @@ API_URL=https://api.tea-fi.com/transaction
 
 ### Bước 2: Cấu Hình Private Key và RPC
 
-1. Tạo file **.txt** rồi đổi tên thành **.env**
-2. Điền vào cấu trúc dữ liệu phía trên, thay bằng **Private Key** và **URL RPC Polygon** đã chuẩn bị
+1. Mở file config.json
+2. Điền vào cấu trúc dữ liệu phía trên, thay bằng **Private Key**, **URL RPC Polygon** và **Proxy** đã chuẩn bị
 3. Lưu file
 
 ### Bước 3: Cài Đặt Module
@@ -115,9 +131,9 @@ API_URL=https://api.tea-fi.com/transaction
    npm install
    ```
 
-### Bước 5: Cấu Hình Private Key và RPC
+### Bước 5: Cấu Hình Private Key, RPC và Proxy
 
-1. Tạo file `.env`.
+1. Mở file `config.json`.
 
    ```bash
    nano env
